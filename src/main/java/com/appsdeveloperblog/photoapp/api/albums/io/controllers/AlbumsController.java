@@ -30,8 +30,7 @@ public class AlbumsController {
     Logger logger = LoggerFactory.getLogger(this.getClass());
     @GetMapping( 
             produces = { 
-                MediaType.APPLICATION_JSON_VALUE,
-                MediaType.APPLICATION_XML_VALUE,
+                MediaType.APPLICATION_JSON_VALUE
             })
     public List<AlbumResponseModel> userAlbums(@PathVariable String id) {
 
