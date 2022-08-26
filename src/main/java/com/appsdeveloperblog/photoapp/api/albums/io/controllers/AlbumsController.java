@@ -44,6 +44,11 @@ public class AlbumsController {
         return String.format("Hi %s, Good morning", name);
     }
 
+    @GetMapping("/server/error")
+    public String throwErrorResponse() {
+        return ""+10/0;
+    }
+
     @Autowired
     AlbumsService albumsService;
     Logger logger = LoggerFactory.getLogger(this.getClass());
