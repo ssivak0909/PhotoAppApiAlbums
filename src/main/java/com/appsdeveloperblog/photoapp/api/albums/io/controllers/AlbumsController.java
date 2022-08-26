@@ -46,7 +46,7 @@ public class AlbumsController {
 
     @GetMapping("/server/error")
     public String throwErrorResponse() {
-        return ""+10/0;
+        return "will throw 500 error"+10/0;
     }
 
     @Autowired
