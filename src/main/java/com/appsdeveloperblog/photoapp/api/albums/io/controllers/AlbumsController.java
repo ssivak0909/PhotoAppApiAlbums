@@ -36,7 +36,12 @@ public class AlbumsController {
 
     @GetMapping("/env")
     public String displayEnvVal() {
-        return String.format("you are on %s environment",env);
+        return String.format("you are on %s environment", env);
+    }
+
+    @GetMapping("/ping/{name}")
+    public String sayHello(@PathVariable("name") String name) {
+        return String.format("Hi %s, Good morning", name);
     }
 
     @Autowired
