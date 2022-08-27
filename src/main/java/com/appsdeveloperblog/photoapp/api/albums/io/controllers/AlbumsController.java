@@ -44,9 +44,14 @@ public class AlbumsController {
         return String.format("Hi %s, Good morning", name);
     }
 
-    @GetMapping("/server/error")
+    @GetMapping("/server/arth")
     public String throwErrorResponse() {
         return "will throw 500 error"+10/0;
+    }
+
+    @GetMapping("/server/runtime")
+    public String getRunTimeException() {
+        throw new RuntimeException("my own runtime exception");
     }
 
     @Autowired
