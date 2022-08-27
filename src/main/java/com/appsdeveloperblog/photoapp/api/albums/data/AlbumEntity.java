@@ -5,12 +5,30 @@
  */
 package com.appsdeveloperblog.photoapp.api.albums.data;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class AlbumEntity {
+    @Id
+    @GeneratedValue
     private long id;
     private String albumId;
-    private String userId; 
+    private String userId;
     private String name;
-    private String description; 
+    private String description;
 
     /**
      * @return the id
@@ -81,6 +99,6 @@ public class AlbumEntity {
     public void setDescription(String description) {
         this.description = description;
     }
-    
-    
+
+
 }

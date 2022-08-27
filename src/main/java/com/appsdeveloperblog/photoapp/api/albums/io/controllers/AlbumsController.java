@@ -6,6 +6,7 @@
 package com.appsdeveloperblog.photoapp.api.albums.io.controllers;
 
 import com.appsdeveloperblog.photoapp.api.albums.data.AlbumEntity;
+import com.appsdeveloperblog.photoapp.api.albums.repo.AlbumRepository;
 import com.appsdeveloperblog.photoapp.api.albums.service.AlbumsService;
 import com.appsdeveloperblog.photoapp.api.albums.ui.model.AlbumResponseModel;
 
@@ -20,10 +21,7 @@ import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -46,7 +44,7 @@ public class AlbumsController {
 
     @GetMapping("/server/arth")
     public String throwErrorResponse() {
-        return "will throw 500 error"+10/0;
+        return "will throw 500 error" + 10 / 0;
     }
 
     @GetMapping("/server/runtime")
@@ -58,6 +56,19 @@ public class AlbumsController {
     AlbumsService albumsService;
     Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    @Autowired
+    private AlbumRepository albumRepository;
+
+    @PostMapping("/albums")
+    public AlbumEntity addAlbum(@RequestBody AlbumEntity album) {
+        return albumRepository.save(album);
+    }
+
+    @GetMapping("/albums")
+    public List<AlbumEntity> getAlbums() {
+        return albumRepository.findAll();
+    }
+
     @GetMapping(value = "/{id}/albums",
             produces = {
                     MediaType.APPLICATION_JSON_VALUE
@@ -66,7 +77,8 @@ public class AlbumsController {
 
         List<AlbumResponseModel> returnValue = new ArrayList<>();
 
-        List<AlbumEntity> albumsEntities = albumsService.getAlbums(id);
+        //  List<AlbumEntity> albumsEntities = albumsService.getAlbums(id);
+        List<AlbumEntity> albumsEntities = albumRepository.findByUserId(id);
 
         if (albumsEntities == null || albumsEntities.isEmpty()) {
             return returnValue;
