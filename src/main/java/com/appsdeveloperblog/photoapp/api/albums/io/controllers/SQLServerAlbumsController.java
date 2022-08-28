@@ -6,21 +6,12 @@
 package com.appsdeveloperblog.photoapp.api.albums.io.controllers;
 
 import com.appsdeveloperblog.photoapp.api.albums.entity.AlbumEntity;
-import com.appsdeveloperblog.photoapp.api.albums.repo.SQLServerAlbumsRepository;
-import com.appsdeveloperblog.photoapp.api.albums.service.GeneralAlbumsService;
 import com.appsdeveloperblog.photoapp.api.albums.service.SQLServerAlbumsService;
-import com.appsdeveloperblog.photoapp.api.albums.ui.model.AlbumResponseModel;
-import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

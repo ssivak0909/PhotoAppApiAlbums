@@ -7,7 +7,6 @@ package com.appsdeveloperblog.photoapp.api.albums.service;
 
 
 import com.appsdeveloperblog.photoapp.api.albums.cosmos.entity.AlbumDocument;
-import com.appsdeveloperblog.photoapp.api.albums.entity.AlbumEntity;
 
 public interface CosmosAlbumsService {
     Iterable<AlbumDocument> getAlbums();

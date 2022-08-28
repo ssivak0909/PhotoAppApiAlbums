@@ -2,7 +2,6 @@ package com.appsdeveloperblog.photoapp.api.albums.cosmos.entity;
 
 import com.azure.spring.data.cosmos.core.mapping.Container;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.GeneratedValue;
