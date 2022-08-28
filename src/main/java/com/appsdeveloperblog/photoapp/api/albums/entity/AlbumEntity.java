@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.appsdeveloperblog.photoapp.api.albums.data;
+package com.appsdeveloperblog.photoapp.api.albums.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

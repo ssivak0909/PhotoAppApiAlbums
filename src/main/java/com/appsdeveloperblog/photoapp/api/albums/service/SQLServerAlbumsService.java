@@ -6,9 +6,12 @@
 package com.appsdeveloperblog.photoapp.api.albums.service;
 
 
-import com.appsdeveloperblog.photoapp.api.albums.data.AlbumEntity;
+import com.appsdeveloperblog.photoapp.api.albums.entity.AlbumEntity;
+
 import java.util.List;
 
-public interface AlbumsService {
-    List<AlbumEntity> getAlbums(String userId);
+public interface SQLServerAlbumsService {
+    List<AlbumEntity> getAlbums();
+
+    AlbumEntity saveAlbumDocs(AlbumEntity album);
 }
