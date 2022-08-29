@@ -9,11 +9,13 @@ import com.appsdeveloperblog.photoapp.api.albums.entity.AlbumEntity;
 import com.appsdeveloperblog.photoapp.api.albums.repo.SQLServerAlbumsRepository;
 import com.appsdeveloperblog.photoapp.api.albums.service.SQLServerAlbumsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@ConditionalOnProperty(prefix = "azure.sqlserver",name = "enabled")
 public class SQLServerAlbumsServiceImpl implements SQLServerAlbumsService {
 
     @Autowired

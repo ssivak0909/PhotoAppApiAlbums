@@ -10,6 +10,7 @@ import com.appsdeveloperblog.photoapp.api.albums.cosmos.repository.AlbumDocument
 import com.appsdeveloperblog.photoapp.api.albums.service.CosmosAlbumsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
+@ConditionalOnProperty(prefix = "azure.cosmos",name = "enabled")
 public class CosmosAlbumsServiceImpl implements CosmosAlbumsService {
 
     @Autowired

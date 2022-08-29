@@ -20,10 +20,6 @@ import java.util.List;
 public class GeneralAlbumsServiceImpl implements GeneralAlbumsService {
 
     @Autowired
-    @Qualifier("albumDocumentRepository")
-    AlbumDocumentRepository albumDocumentRepository;
-
-    @Autowired
     ModelMapper modelMapper;
 
     @Override

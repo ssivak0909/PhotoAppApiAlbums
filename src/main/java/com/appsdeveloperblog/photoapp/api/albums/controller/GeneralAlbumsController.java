@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.appsdeveloperblog.photoapp.api.albums.io.controllers;
+package com.appsdeveloperblog.photoapp.api.albums.controller;
 
 import com.appsdeveloperblog.photoapp.api.albums.entity.AlbumEntity;
 import com.appsdeveloperblog.photoapp.api.albums.service.GeneralAlbumsService;
