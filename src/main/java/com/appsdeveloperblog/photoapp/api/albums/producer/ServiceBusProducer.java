@@ -22,9 +22,10 @@ class ServiceBusProducer implements Ordered {
 
     @EventListener(ApplicationReadyEvent.class)
     public void produce() throws Exception {
-        for (int i = 0; i < 100; i++) {
+        int i = 0;
+        //for ( i = 0; i < 100; i++) {
             this.iTopicClient.send(new Message(String.format("Hello @%d ", i) + Instant.now().toString()));
-        }
+       // }
     }
 
     @Override
